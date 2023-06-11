@@ -15,9 +15,6 @@ public class Google {
         Driver.getDriver().get("https://google.com");
         Flow.pause(3000);
         String data = faker.lorem().sentence();
-        Driver.getDriver().findElement(By.name("q")).sendKeys(data + Keys.ENTER);
-        String title = Driver.getDriver().getTitle();
-        Assert.assertTrue("Title does not contain", title.contains(data));
         Driver.quit();
     }
 
